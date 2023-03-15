@@ -11,7 +11,7 @@ public interface BookDao {
     //insert book
     int insertBook(String title, String author);
 
-    //get all book
+    //get all books
     List<Book> selectAllBooks();
 
     //delete a book
