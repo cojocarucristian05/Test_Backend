@@ -12,25 +12,31 @@ import java.util.Optional;
 @Service
 public class BookService {
 
+    //fields
     private final BookDao bookDao;
 
+    //constructor
     @Autowired
     public BookService(@Qualifier("data") BookDao bookDao) {
         this.bookDao = bookDao;
     }
 
+    //insert book
     public int addBook(Book book) {
         return bookDao.insertBook(book.getTitle(), book.getAuthor());
     }
 
+    //select books
     public List<Book> getAllBooks() {
         return bookDao.selectAllBooks();
     }
 
+    //search book
     public Optional<Book> getBookByTitle(String title) {
         return bookDao.searchBookByTitle(title);
     }
 
+    //delete book
     public int deleteBook(String title) {
         return bookDao.deleteBook(title);
     }

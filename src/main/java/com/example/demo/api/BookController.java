@@ -11,34 +11,41 @@ import java.util.List;
 @RestController
 public class BookController {
 
+    //fields
     private final BookService bookService;
 
+    //constructor
     @Autowired
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
 
+    //this endpoint adds a new book
     @PostMapping(path = "/add")
     public void addBook(@RequestBody Book book) {
         bookService.addBook(book);
     }
 
+    //this endpoint returns all book from our (fake) database
     @GetMapping(path = "/books")
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
+    //this endpoint search a book in our (fake) database
     @GetMapping(path = "/search/{title}")
     public Book getBookByTitle(@PathVariable("title") String title) {
         return bookService.getBookByTitle(title)
                 .orElse(null);
     }
 
+    //this endpoint deletes a book from our (fake) database
     @DeleteMapping(path = "/delete/{title}")
     public void deleteBookByTitle(@PathVariable("title") String title) {
         bookService.deleteBook(title);
     }
 
+    //this endpoint update the author if we find the book in our (fake) database
     @PutMapping(path = "/update/{title}")
     public void updateBook(@PathVariable String title, @RequestBody String author) {
         bookService.updateBookAuthor(title, author);

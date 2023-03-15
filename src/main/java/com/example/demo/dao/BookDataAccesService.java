@@ -44,25 +44,27 @@ public class BookDataAccesService implements BookDao {
         return 1;       //return 1.....
     }
 
+    //this method searches for a book in our library
     @Override
     public Optional<Book> searchBookByTitle(String title) {
         return DB
-                .stream()
-                .filter(book -> book.getTitle().equals(title))
-                .findFirst();
+                .stream()           //make a stream
+                .filter(book -> book.getTitle().equals(title))      //filter books
+                .findFirst();       //return the first book that has the title we are searching for
     }
 
+    //this method updates the author
     @Override
     public int updateAuthor(String title, String author) {
-        return searchBookByTitle(title)
+        return searchBookByTitle(title)     //first step: searching the book
                 .map(b -> {
-                    int indexOfBookToUpdate = DB.indexOf(b);
-                    if(indexOfBookToUpdate >= 0) {
-                        DB.get(indexOfBookToUpdate).setAuthor(author);
+                    int indexOfBookToUpdate = DB.indexOf(b);        //get the index from our database(ArrayList)
+                    if(indexOfBookToUpdate >= 0) {          //if the index is valid
+                        DB.get(indexOfBookToUpdate).setAuthor(author);      //update author
                         return 1;
                     }
                     return 0;
                 })
-                .orElse(0);
+                .orElse(0);     //if we don't find the book
     }
 }
