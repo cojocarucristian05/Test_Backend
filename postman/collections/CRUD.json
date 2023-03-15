@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "40efb34f-b1a7-440a-a286-d5b16da5af72",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "26358138-40efb34f-b1a7-440a-a286-d5b16da5af72"
+	},
+	"item": [
+		{
+			"name": "Get all books",
+			"id": "de716c4b-18c9-4129-98af-d8836549e73f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/library/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new book",
+			"id": "a262620f-dd6e-4814-bec8-8ea4952e5822",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Age of Vice\",\r\n    \"author\": \"Deepti Kapoor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/library/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new book 2",
+			"id": "8bd41730-152c-49c0-a19b-088a4ea8f00e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"The Faraway World\",\r\n    \"author\": \"Patricia Engel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/library/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new book 3",
+			"id": "fab0652e-3e71-43b1-ade6-c377da9e18ae",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Nebunul\",\r\n    \"author\": \"Dostoievski\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/library/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book",
+			"id": "df7cc0ce-df8a-4530-b9ba-bd7d51140456",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/library/delete/Nebunul",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"delete",
+						"Nebunul"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update book's author",
+			"id": "b25c29a9-949a-41ad-b113-8b8764f26fd6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "F. N. Dostoievski"
+				},
+				"url": {
+					"raw": "localhost:8080/library/update/Nebunul",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"library",
+						"update",
+						"Nebunul"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
